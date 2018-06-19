@@ -22,7 +22,9 @@
     "docs:prepare": "cd hygen.io && yarn",
     "docs:watch": "cd hygen.io && yarn gatsby develop",
     "docs:build": "cd hygen.io && yarn build",
-    "docs:publish": "cd hygen.io && yarn build:gh"
+    "docs:publish": "cd hygen.io && yarn build:gh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "chalk": "^2.1.0",
@@ -33,7 +35,8 @@
     "inflection": "^1.12.0",
     "inquirer": "^4.0.2",
     "lodash": "^4.17.4",
-    "yargs-parser": "^7.0.0"
+    "yargs-parser": "^7.0.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.39",
@@ -62,5 +65,6 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     }
-  }
+  },
+  "snyk": true
 }
